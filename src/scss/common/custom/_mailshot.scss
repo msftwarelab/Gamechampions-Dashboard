@@ -1,0 +1,93 @@
+.panel__splitter {
+  @include breakpoint {
+    @include container($max-width);
+
+    display: flex;
+  }
+}
+  
+.panel__section {
+  background-color: $input-disabled-background-color;
+
+  @include breakpoint {
+    @include span(1 of 4);
+
+    padding: 0.5em;
+    margin: 0.5em 0 1em;
+    float: right;
+  }
+}
+  
+.panel__list {
+  padding-left: 0;
+}  
+
+.panel__item {
+  display: inline-block;
+  padding: 0.5em;
+
+  @include breakpoint {
+    display: block;
+  }
+}
+
+.panel__form {
+  @include breakpoint {
+    @include span(3 of 4 1/12);
+  }
+}
+
+.wysiwyg__wrapper {
+  max-width: none;
+  border: 1px solid $label-color;
+  border-radius: 3px;
+  color: $theme-color-black;
+}
+
+.wysiwyg__wrapper--disabled {
+  background-color: $input-disabled-background-color;
+}
+  
+.wysiwyg__editor {
+  min-height: 8em;
+  padding: 0 0.75em;
+  background-color: $theme-color-white;
+  color: $theme-color-black;
+}
+
+.wysiwyg__editor--disabled {
+  background-color: $input-disabled-background-color;
+  color: $disabled-background-color;
+  pointer-events: none;
+}
+  
+.multi-select__options {
+  z-index: 5;
+  .css-1hwfws3 {
+    padding: 0.75em 0.5em;
+  }
+
+  .css-vj8t7z {
+    border: 1px solid $label-color;
+    border-radius: $input-border-radius;
+    outline: none;
+  }
+}
+
+.form-field--invalid {  
+  .form-field__input-container {
+    .css-10nd86i.multi-select__options {
+      border-bottom: 3px solid $error-color;
+    }
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+.form-field--disabled {
+  .DateInput_input {
+    background-color: $input-disabled-background-color;
+    color: $disabled-background-color;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,14 @@
+.blink {
+  -webkit-animation: blink-animation 1s linear infinite;
+  animation: blink-animation 1s linear infinite;
+}
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
+}

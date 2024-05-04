@@ -1,0 +1,104 @@
+$storage-url: "https://gamechampions.blob.core.windows.net/images"; 
+
+.social-links {
+  max-width: 22em;
+  flex-wrap: wrap;
+  margin: 0;
+  text-align: center;
+  padding: 0;
+
+  @include breakpoint {
+    text-align: left;
+    padding: 0;  
+  }
+}
+
+
+.social-links__item {
+  padding: 0;
+  display: inline-block;
+  margin-right: 1.5em;
+  filter: grayscale(100%);
+  @include breakpoint{
+    padding: 0;    
+  }
+  &:hover{
+    filter: none;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social-links__item__link {
+  display: inline-block;
+  overflow: hidden;
+  width: 34px;
+  height: 34px;
+  color: transparent;
+  vertical-align: middle;
+
+  &:hover {
+    color: transparent;
+  }
+
+  &:visited {
+    color: transparent;
+  }
+
+  &:active {
+    color: transparent;
+  }
+
+  &::before {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    content: " ";
+    vertical-align: middle;
+  }
+
+    
+  &.facebook {
+    background: url($storage-url + "/facebook.png") no-repeat 50%;
+    background-size: contain;
+  }
+  &.tiktok {
+    background: url($storage-url + "/tiktok.png") no-repeat 50%;
+    background-size: contain;
+  }
+  &.youtube {
+    background: url($storage-url + "/youtube.png") no-repeat 50%;
+    background-size: contain;
+  }
+  &.linkedin {
+    background: url($storage-url + "/linkedin.png") no-repeat 50%;
+    background-size: contain;
+  }
+
+  &.twitter {
+    background: url($storage-url + "/twitter.png") no-repeat 50%;
+    background-size: contain;
+  }
+
+  &.instagram {
+    background: url($storage-url + "/instagram.png") no-repeat 50%;
+    background-size: contain;
+  }
+
+  &.telegram {
+    background: url($storage-url + "/telegram.png") no-repeat 50%;
+    background-size: contain;
+  }
+
+  &.snapchat {
+    background: url($storage-url + "/snapchat.png") no-repeat 50%;
+    background-size: contain;
+  }
+  &.discord {
+    background: url($storage-url + "/discord.png") no-repeat 50%;
+    background-size: contain;
+  }
+}
+

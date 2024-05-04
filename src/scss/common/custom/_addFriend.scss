@@ -1,0 +1,28 @@
+.add-friend {
+  width: 100%;
+}
+.dynamic-form--add-friend-form {
+  @include breakpoint {
+    .form--add-friend-form {
+      display: flex;
+    }
+    .form__buttons__button {
+      width: 100%;
+      margin: unset;
+      margin-left: 10px;
+    }
+  }
+
+  .form__section--add-friend-form {
+    width: 100%;
+  }
+
+  .button {
+    background-color: #eb2554 !important;
+  }
+}
+
+.sharethis {
+  margin: 1%;
+}
+

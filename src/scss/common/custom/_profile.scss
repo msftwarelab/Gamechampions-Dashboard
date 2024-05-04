@@ -1,0 +1,217 @@
+.profile-form__thumbnail {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.profile-form__images {
+  position: relative;
+  padding-bottom: 5%;
+  margin: 2em 0;
+}
+
+.profile-search-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.profile-search-wrapper__create-btn {
+  width: 100%;
+  margin-top: 1em;
+
+  @include breakpoint {
+    width: auto;
+  }
+
+  .card__content__ctas__button--left {
+    margin-bottom: 1em;
+
+    @include breakpoint {
+      margin-right: 1em;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.profile-search {
+  width: 100%;
+
+  @include breakpoint {
+    @include span (1 of 2);
+  }
+}
+
+.profile-search--advanced {
+  @include breakpoint {
+    min-width: 28em;
+    margin-right: 0;
+  }
+}
+
+.profile-search__field {
+  padding-top: 0;
+  padding-left: 0;
+}
+
+.profile-search__input {
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2.25em;
+  border: 1px solid $label-color;
+  border-radius: 3px;
+  outline: none;
+
+  &:focus {
+    border: 1px solid $theme-color-primary;
+  }
+}
+
+.profile-search__field-input {
+  margin-bottom: .5em;
+
+  &::after {
+    position: absolute;
+    top: 1em;
+    left: 0.5em;
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    background: url(/img/icons/ic_search_black_24px.svg) no-repeat 50%;
+    background-size: cover;
+    content: '';
+  }
+}
+
+.profile-form__banner-container__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.profile-form__banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0.8em auto 3em;
+  background-color: $darken-color-light;
+  box-shadow: $box-shadow;
+
+  @include breakpoint {
+    margin: 0.8em auto 1em;
+  }
+}
+
+.profile-form__banner-container {
+  overflow: hidden;
+  width: 100%;
+  padding-top: 50%; //aspect ratio 2:1
+}
+
+.profile-form__banner-container__label {
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+  font-size: 0.875em;
+}
+
+.profile-form__thumbnail-image {
+  position: relative;
+  width: 8em;
+  height: 8em;
+  margin: auto;
+  background-color: $darken-color-light;
+  border-radius: 50%;
+  box-shadow: $box-shadow-elevated;
+}
+
+.profile-form__thumbnail-image__label {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  cursor: pointer;
+  font-size: 0.875em;
+  text-align: center;
+}
+
+.profile-form__thumbnail-image__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.jobseeker-profile {
+  @include breakpoint {
+    overflow-y: unset;
+  }
+}
+
+.profile-pic {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+.profile-doc {
+  width: 100%;
+  height: 11rem;
+  display: flow-root;
+  justify-content: center;
+  padding: 1em;
+}
+.profile-doc__label__container {
+  display: grid;
+}
+.profile-doc__label {
+  position: unset!important;
+  width: 220px;
+  height: 55px;
+  padding: 15px;
+  color: white;
+  bottom: unset;
+  margin: 0px auto 1rem;
+  background-color: #00A826;
+  border-radius: 10px;
+  &:hover {
+    background-color: #01C12C !important;
+  }
+  &:active {
+    background-color: #01811D !important;
+  }
+}
+.image-upload--profile-doc-upload {
+  &::after {
+    top: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+  }
+  .profile-doc__img {
+    display: none!important;
+  }
+}
+.image-upload {
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
+  .profile-pic__img {
+    width: 120px;
+    max-width: 100%;
+    height: 120px;
+    border-radius: 50%;
+  }
+}

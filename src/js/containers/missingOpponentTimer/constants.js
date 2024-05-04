@@ -1,0 +1,6 @@
+export const REDUCER_NAME = "timer";
+
+export const REPORT_MISSING_OPPONENT = `${REDUCER_NAME}/REPORT_MISSING_OPPONENT`;
+export const SET_START_TIME = `${REDUCER_NAME}/SET_START_TIME`;
+
+export const TIME_TO_BEGIN_MATCH = process.env.TIME_TO_BEGIN_MATCH;

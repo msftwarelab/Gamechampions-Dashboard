@@ -1,0 +1,126 @@
+.dynamic-form--login-form {
+  @include container(48em);
+  .form-field--forgotPassword{
+    display: none;
+    @include breakpoint {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  .form__buttons--login-form{
+    padding: 0;
+    @include breakpoint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5em 0;
+    }
+    .form__buttons__button--login-form {
+      @include breakpoint {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+.dynamic-form--registration-form {
+  @include container(48em);
+  .form__buttons--registration-form{
+    padding: 0 0.5rem;
+    @include breakpoint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .form__buttons__button--registration-form {
+      @include breakpoint {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.form__error--login-form {
+  padding: 0.5em;
+}
+
+.form__error__message--login-form {
+  display: inline-block;
+  width: 100%;	
+}
+
+.checkbox {
+  label {
+    margin-left: 0.5em;
+  }
+}
+
+.register-links {
+  margin: 1em 0;
+  font-size: 0.875em;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include breakpoint {
+    text-align: left;
+  }
+}
+
+.register-links--right {
+  @include breakpoint {
+    float: right;
+    text-align: right;
+  }
+}
+
+.register-links__item__link {
+  @include breakpoint {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.register-links__item {
+  width: 50%;
+  padding: 0.5em;
+  margin: 0.25em auto;
+
+  @include breakpoint {
+    width: 100%;
+  }
+}
+
+.btnFacebook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 10px;
+  border: 0;
+  background: #1877f2;  
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+
+  @include breakpoint {
+    max-width: 16em;
+    margin-right: 0.5em;
+  }
+}
+
+.fa {
+  width: 1.1em;
+  height: 1.1em;
+  padding: 0.2em 0.2em;
+  background-color: white;
+  border-radius: 50%;
+  color: #1877f2;
+  font-size: 2em !important;
+}

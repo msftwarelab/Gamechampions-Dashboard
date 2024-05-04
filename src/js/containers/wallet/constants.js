@@ -1,0 +1,11 @@
+export const REDUCER_NAME = "wallet";
+export const WALLET_LOADING = `${REDUCER_NAME}/WALLET_LOADING`;
+export const BONUS_MONEY = `${REDUCER_NAME}/BONUS_MONEY`;
+export const AVAILABLE_AMOUNT = `${REDUCER_NAME}/AVAILABLE_AMOUNT`;
+export const INPLAY_BALANCE = `${REDUCER_NAME}/INPLAY_BALANCE`;
+export const COMMISSION = `${REDUCER_NAME}/COMMISSION`;
+export const WALLET_ERROR = `${REDUCER_NAME}/WALLET_ERROR`;
+export const DEPOSIT_COUNT = `${REDUCER_NAME}/DEPOSIT_COUNT`;
+export const RETURN_URL = "/";
+export const MAX_AMOUNT = 500;
+export const MIN_AMOUNT = 10;

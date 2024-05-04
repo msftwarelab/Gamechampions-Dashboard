@@ -1,0 +1,3 @@
+export const REDUCER_NAME = "gameLobby";
+export const SET_GAME_TICKER_MATCHES = `${REDUCER_NAME}/SET_GAME_TICKER_MATCHES`;
+export const SET_GAME = `${REDUCER_NAME}/SET_GAME`;

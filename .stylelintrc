@@ -1,0 +1,9 @@
+{
+    "extends": [
+        "stylelint-config-idiomatic-order",
+        "stylelint-config-prettier"
+    ],
+    "rules": {
+        "indentation": 2
+    }
+}

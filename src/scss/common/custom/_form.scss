@@ -1,0 +1,323 @@
+$form-field__label-color: rgba(0, 0, 0, 0.33);
+$form-field--invalid__label-color: rgba(0, 0, 0, 0.33);
+
+.form-field__input--right {
+  ~ .form-field__label {
+    top: 1em;
+    right: 0.5em;
+    left: auto;
+    padding-right: 1.75em;
+  }
+}
+
+.form-field--invalid {
+  .form-field__label {
+    color: $error-color;
+  }
+}
+
+.form-field__input {
+  padding: 0.75em 0.5em;
+  border: none;
+}
+
+.form-field__input--bordered {
+  border: 1px solid $darken-color-dark;
+}
+
+.form-field--currency.form-field--invalid {
+  .form-field__label {
+    color: $label-color;
+  }
+
+  .form-field__input-container {
+    &::after {
+      border-bottom-color: $error-color;
+      transform: scaleX(1);
+    }
+  }
+
+  .css-1hwfws3 {
+    padding: 0.75em 0.5em;
+  }
+}
+
+.form-field__input__deposit,
+.form-field__input__deposit:focus,
+.form-field__input__deposit:active {
+  line-height: normal !important;
+  font-size: 4.5rem !important;
+  border: none !important;
+  outline: none !important;
+  text-align: center !important;
+  max-width: 100% !important;
+}
+.form-field--form-field__input__withdrawal {
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.form-field__input--form-field__input__withdrawal {
+  padding: 0 !important;
+}
+.form-field__input--form-field__input__withdrawal,
+.form-field__input--form-field__input__withdrawal:focus,
+.form-field__input--form-field__input__withdrawal:active {
+  line-height: normal !important;
+  font-size: 4.5rem !important;
+  border: none !important;
+  outline: none !important;
+  max-width: 100% !important;
+}
+
+.form-field__input__deposit::-webkit-outer-spin-button,
+.form-field__input__deposit::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+.form-field__input--form-field__input__withdrawal::-webkit-outer-spin-button,
+.form-field__input--form-field__input__withdrawal::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+.form-field__input--form-field__input__withdrawal {
+  color: #00A826 !important;
+  font-weight: 700 !important;
+  background-color: transparent !important;
+}
+
+.form-field--currency {
+  .form-field__input--has-value,
+  .form-field__input:focus,
+  .form-field__input:active {
+    ~ .form-field__label {
+      display: none;
+    }
+  }
+}
+
+.form-field__label {
+  position: absolute;
+  top: 1.5em;
+  left: 0.5em;
+  height: 1.714em;
+  margin: auto;
+  color: $form-field__label-color;
+  font-size: 0.875em;
+  font-weight: 400;
+  pointer-events: none;
+
+  @include breakpoint {
+    padding-left: 0.75em;
+  }
+}
+
+.form__error__message {
+  display: block;
+  padding: 0.25em 0.5em;
+  border-left: 3px solid $error-color;
+  margin-top: 0.25em;
+  background-color: $error-background-color;
+  border-radius: $input-border-radius;
+  color: $font-color;
+}
+
+.no-js {
+  .form-field__input {
+    ~ .form-field__label {
+      transform: translate3d(-0.1em, -0.75em, 0) scale(0.75);
+    }
+  }
+}
+
+.form__section {
+  @include container;
+}
+
+.form__section__title {
+  margin-top: 2em;
+
+  @include breakpoint {
+    padding-left: 0.5em;
+  }
+}
+
+.form-field__input-container {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid $label-color;
+    border-radius: $input-border-radius;
+    content: "";
+    pointer-events: none;
+    transform: scaleX(0);
+    transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  }
+}
+
+.form-field--time.form-field--invalid {
+  .form-field__input-container {
+    &::after {
+      border-bottom-color: $error-color;
+      transform: scaleX(1);
+    }
+  }
+}
+
+.form-field--time__input {
+  padding: 0.75em 0.2em 0.75em 0.5em;
+}
+
+.forgot-password-form {
+  @include container(48em);
+}
+
+.image-upload--thumb {
+  &::after {
+    border-radius: 50%;
+  }
+}
+
+.form-field__label--date-picker {
+  transform: translate3d(-0.1em, -0.75em, 0) scale(0.75);
+}
+
+.form__buttons--search-toggle {
+  padding: 0;
+
+  @include breakpoint {
+    padding: 0;
+  }
+}
+
+.multiple-answer__container {
+  display: flex;
+  width: 100%;
+
+  .multiple-answer__container__item__remove {
+    position: absolute;
+    right: 2em;
+    width: 1em;
+    height: 1em;
+    margin-top: 1.2em;
+    background: url(/img/icons/baseline-delete-24px.svg) no-repeat center;
+    background-color: transparent;
+    background-size: 75% 75%;
+    cursor: pointer;
+  }
+
+  .form-field__checkbox {
+    margin-top: 1.2em;
+  }
+
+  .form-field__checkbox__label {
+    left: 1em;
+    width: 10em;
+
+    @include breakpoint {
+      width: unset;
+    }
+  }
+}
+
+.multiple-answer__container__add-button {
+  width: 100%;
+  padding: 0;
+
+  .add__button {
+    width: 12.5em;
+    max-width: none;
+    padding: 1.2em;
+    border-style: dashed;
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+
+    @include breakpoint {
+      width: 49.5%;
+    }
+  }
+
+  @include breakpoint {
+    padding: 0.5em;
+  }
+}
+
+.dynamic-form--contact-form {
+  margin-top: 2em;
+
+  textarea {
+    height: 220px;
+  }
+}
+.form--games-search__form {
+  .form-field__input--single {
+    height: 2em;
+    padding: 1em !important;
+  }
+}
+
+.form--affiliate__reporting-search__form {
+  .form__section--affiliate__reporting-search__form {
+    .form-field--affiliate__reporting-date {
+      width: 50%;
+      padding-left: 0;
+      float: right;
+    }
+
+    @include breakpoint {
+      display: flex;
+      width: auto;
+      flex-direction: row;
+    }
+
+    .form-field--affiliate__reporting-type {
+      padding: 0.5em 0.5em 0.5em 0;
+    }
+  }
+}
+
+.form--modal-search__form {
+  .form-field--material {
+    .form-field__input-container--single {
+      min-width: 17em;
+    }
+    select.form-field__input {
+      text-align-last: center;
+    }
+  }
+  .form-field__input {
+    height: 2.5em !important;
+    padding: 0 1em !important;
+  }
+}
+
+.form--search__match__form {
+  margin: 1rem 0 0;
+
+  @include breakpoint {
+    margin: 0 0.5rem;
+  }
+
+  .form__section--search__match__form {
+    @include breakpoint{
+      display: flex;
+      flex-direction: row-reverse;
+    }    
+  }
+
+  .form-field:nth-child(3) {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-field__input {
+    height: 2.2em !important;
+    padding: 0 1em !important;
+  }
+}

@@ -1,0 +1,35 @@
+.bet-badge-span {
+    width: 273.7px;
+    height: 123.7px;
+    background-color: #f55600;
+    color: #fff;
+    text-align: center;
+    border-radius: 16px;
+    padding: 18px 14px;
+    position: absolute;
+    z-index: 3;
+    bottom: 137%;
+    right: -22%;
+    opacity: 1;
+}
+.bet-badge-span::after {
+    content: "";
+    position: absolute;
+    top: 98.1%;
+    right: 5%;
+    border-width: 16px;
+    border-style: solid;
+    border-color: #f55600 transparent transparent transparent;
+}
+
+@media only screen and (min-width: 768px) {
+    .bet-badge-span {
+        margin-top: 1rem;
+        top: 95%;
+        bottom: 0%;
+    }
+    .bet-badge-span::after {
+        top: -24%;
+        rotate: 180deg;
+    }
+}

@@ -1,0 +1,360 @@
+$nav-background-color-dark: lighten($theme-color-black, 20%);
+$nav-background-color-light: $theme-color-white;
+
+.nav {
+  @include breakpoint {
+    height: 100%;
+    padding: 0.5em 0 0;
+  }
+}
+
+.nav__side-nav {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 16em;
+  box-shadow: $box-shadow;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translate3d(-102%, 0, 0);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+  will-change: transform;
+
+  @if $useDarkTheme == true {
+    background-color: $nav-background-color-dark;
+  }
+
+  @else {
+    background-color: $nav-background-color-light;
+  }
+
+  &.touching {
+    transition: none;
+  }
+
+  @include breakpoint {
+    position: relative;
+    width:4em;
+    height: 100%;
+
+    &::after {
+      display: block;
+      height: 3.5em;
+      content: '';
+    }
+  }
+}
+
+.nav__side-nav-open {
+  display: none;
+  width: 16em;
+
+  @include breakpoint {
+    display: block;
+  }
+}
+
+.nav__side-nav--always-open-on-desktop {
+  @include breakpoint {
+    display: flex;
+    flex-direction: column;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.nav__side-nav__header__profile {
+  padding: 1.5em;
+  color: $theme-color-white;
+}
+
+.nav__side-nav__header {
+  position: relative;
+  display: visible;
+  overflow: hidden;
+  height: 9em;
+  background-color: $theme-color-primary;
+  box-shadow: $box-shadow-bottom;
+
+  @include breakpoint {
+    display: none;
+    height: 3.5em;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+.nav__side-language__selector{
+  position: absolute;
+  z-index: 9;
+  top: 1em;
+  right: 1em;
+  @include breakpoint {
+    display: none;
+  }
+}
+
+.nav__credits{  
+  width: 100%;
+  @include breakpoint {
+    padding: 1em;
+    margin-top: auto;
+  }
+}
+
+.nav__side-nav__header__logo {
+  width: 100%;
+  height: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 5em;
+    margin: auto;
+  }
+}
+
+.nav--side__header__profile__image {
+  position: relative;
+  overflow: hidden;
+  width: 3em;
+  height: 3em;
+  background-color: $darken-color-light;
+  border-radius: 50%;
+  box-shadow: $box-shadow-elevated;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: $theme-color-white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.nav--side__header__profile__text {
+  font-size: .8em;
+}
+
+.nav--side__header__profile__title {
+  margin-top: 1em;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.nav__logo {
+  width: 100%;
+  height: 100%;
+}
+
+.nav__logo__img {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.nav__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__item {
+  padding: 0;
+}
+
+.collapse-button {
+  position: fixed;
+  z-index: 6;
+  right: 0.01em;
+  bottom: 1em;
+  display: none;
+  width: 65px;
+  height: 50px;
+  align-items: end;
+  justify-content: end;
+  padding: 12px 5px;
+  cursor: pointer;
+  text-align: center;
+
+  @include breakpoint {
+    display: block;
+  }
+  
+  &:hover,
+  &:active {
+    @if $useDarkTheme == true {
+      background-color: lighten($nav-background-color-dark, 20%);
+      color: darken($font-color-light, 10%);
+    }
+
+    @else {
+      background-color: darken($nav-background-color-light, 20%);
+      color: opacify($font-color, 1);
+    }
+  }
+
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  padding: 1em 0 1em 1.25em;
+  border-left: 2px solid transparent;
+  margin-top: 0;
+  font-weight: 700;
+  text-decoration: none;
+
+  @include breakpoint {
+    white-space: break-spaces;
+  }
+
+  @if $useDarkTheme == true {
+    color: darken($font-color-light, 10%);
+  }
+
+  @else {
+    color: $font-color;
+  }
+
+  &:visited {
+    @if $useDarkTheme == true {
+      color: darken($font-color-light, 10%);
+    }
+
+    @else {
+      color: $font-color;
+    }
+  }
+
+  &:hover,
+  &:active {
+    @if $useDarkTheme == true {
+      background-color: lighten($nav-background-color-dark, 20%);
+      color: darken($font-color-light, 10%);
+    }
+
+    @else {
+      background-color: darken($nav-background-color-light, 20%);
+      color: opacify($font-color, 1);
+    }
+  }
+  i, span {
+    color: #979797;
+  }
+  &.selected, 
+  &.tab-selected {
+    color: $theme-color-primary !important;
+    pointer-events: none;
+    &:after {
+      content: "\2022";
+      font-size: 2.8rem;
+      margin-top: -0.4rem;
+      display: block;
+      text-align: center;
+      color: $theme-color-primary;
+    }
+    i, span {
+      color: $theme-color-primary;
+    }
+  }
+  &.selected {
+    &:after {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+.nav__link__fullwidth {
+  width: 100%;
+  justify-content: center;
+}
+
+.nav__body {
+  font-size: 1em;
+  transform: translateZ(0);
+}
+
+.nav__section {
+  border-bottom: $border-darken;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.nav__menu {
+  height: 100%;
+
+  input {
+    display: none;
+
+    &:checked {
+      ~ .nav__side-nav {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+.nav__icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 1em;
+  fill: $theme-color-white;
+  line-height: 1;
+  vertical-align: middle;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: $theme-color-white;
+  }
+}
+
+.menu-name-show {
+  display: block;
+
+  @include breakpoint {
+    display: none;
+  }
+}
+
+.menu-name-hide {
+  display: none;
+
+  @include breakpoint {
+    display: block;
+  }
+}
+.nav__sticky{
+  display: none;
+  position: fixed;
+  z-index: 4;
+  bottom: 0;
+  width: 100%;
+  height: 65px;
+  margin: 0px;
+
+}
+
+.tab__nav__link {
+  color: #979797;
+  &:hover {
+    color: #979797 !important;
+    background-color: transparent !important;
+  }
+  &:visited {
+    color: #979797 ;
+  }
+}

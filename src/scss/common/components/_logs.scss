@@ -1,0 +1,44 @@
+$log-color: rgba(0, 0, 0, 1);
+$log-background: #d9d9d9;
+$list-background: #efefef;
+
+.logs-list {
+  display: flex;
+  height: calc(100% - 25em);
+  flex-direction: column;
+  padding: .5em;
+  border: 1px solid #a9a9a9;
+  margin: .5em;
+  background-color: $list-background;
+  border-radius: 4px;
+  list-style: none;
+  overflow-y: auto;
+
+  @include breakpoint() {
+    height: calc(100vh - 30em);
+  }
+}
+
+.logs-list__message {
+  min-width: 12em;
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: 0;
+  font-size: .8em;
+  text-align: left;
+}
+
+.logs-list__message__text {
+  display: block;
+  padding: .5em 1em;
+  background-color: $log-background;
+  border-radius: 1.5em;
+  color: $log-color;  
+}
+
+.logs-list__message__datetime,
+.logs-list__message__author {
+  padding: 0 0.5em;
+  font-size: .875em;
+  text-align: left;
+}

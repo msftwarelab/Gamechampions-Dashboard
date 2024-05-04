@@ -1,0 +1,65 @@
+@media print {
+  body {
+    background-color: $theme-color-white;
+  }
+
+  .breadcrumbs {
+    display: none;
+  }
+
+  .main {
+    margin-top: 0;
+  }
+
+  .card {
+    box-shadow: none;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .table__row.table__head__row {
+    display: table-row;
+    background-color: $theme-color-white;
+  }
+
+  .table__head__cell {
+    display: table-cell;
+    padding: 1em 1em 1em 0.33em;
+  }
+
+  .table__row {
+    display: table-row;
+  }
+
+  .card__content__ctas {
+    display: none;
+  }
+
+  .table__head {
+    &::before {
+      display: none;
+    }
+  }
+
+  .table__cell {
+    color: $theme-color-black;
+  }
+
+  .table__cell--right {
+    text-align: initial;
+  }
+
+  .revenues-filter-form {
+    display: none;
+  }
+
+  .print-date {
+    display: block;
+  }
+
+  .revenue .table__body .table__row:last-child {
+    background-color: $theme-color-white;
+  }
+}

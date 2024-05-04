@@ -1,0 +1,6 @@
+export const REDUCER_NAME = "playerReferral";
+export const SET_REFERRAL_LINK = `${REDUCER_NAME}/SET_REFERRAL_LINK`;
+export const RESET_REFERRAL_LINK = `${REDUCER_NAME}/RESET_REFERRAL_LINK`;
+export const SET_ERROR = `${REDUCER_NAME}/SET_ERROR`;
+export const RESET_ERROR = `${REDUCER_NAME}/RESET_ERROR`;
+export const SET_LOADING = `${REDUCER_NAME}/SET_LOADING`;

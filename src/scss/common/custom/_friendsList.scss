@@ -1,0 +1,249 @@
+.friends {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 0;
+
+  .card-close {
+    position: fixed;
+    z-index: 9;
+  }
+
+  .card-close__button::after {
+    bottom: 8px;
+    left: 8px;
+    color: $theme-color-white;
+  }
+}
+
+.friends-wrapper {
+  display: none;
+  padding-top: 1em;
+
+  @include breakpoint() {
+    display: block;
+    padding-top: 0.5em;
+  }
+}
+
+/* TODO: move that style to reusable style to allow other elements scroll style to be the same  */
+.friends-wrapper__card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  @include breakpoint() {
+    min-width: 240px;
+    height: 100%;
+  }
+}
+
+.friends-title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0.5em;
+  background-color: $theme-color-primary;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 16px;
+  font-weight: $font-weight-normal;
+
+  @include breakpoint {
+    justify-content: space-between;
+  }
+
+  span {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 85%;
+    padding-left: 0.5em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include breakpoint {
+      max-width: 12em;
+      flex: 1;
+    }
+  }
+
+  img {
+    width: 24px;
+  }
+}
+
+.friend__add {
+  display: none;
+  @include breakpoint {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-left: 1em;
+  }
+}
+
+.friend__add_mobile {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: 1em;
+  @include breakpoint {
+    display: none;
+  }
+}
+
+.friends-list__wrapper {
+  color: $theme-color-primary;
+
+  overflow-y: auto;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $theme-color-primary;
+  }
+
+  @include breakpoint() {
+    color: #00000000;
+  }
+}
+
+.friends-list {
+  padding: 0;
+  border: 1px solid $darken-color-light;
+  border: none;
+  margin: 0;
+}
+
+.friends__list__header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+
+  .form-field {
+    padding: unset !important;
+  }
+
+  .form-field__input {
+    padding: 0.5em;
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+
+  .form-field__input--single:focus {
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+}
+
+.friends-list__item {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  border-color: $theme-color-white;
+  color:$theme-color-black;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.43;
+  
+  img {
+    width: 40px !important;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  span {
+    overflow: hidden;
+    max-width: 10em;
+    padding: 0.7em 0 0.7em;
+    margin-left: 0.2em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &:nth-child(2n) {
+    background-color: $darken-color-light;
+  }
+
+  @include breakpoint() {
+    width: 16em;
+  }
+  
+  .friends-list--online{
+    position: absolute;
+    right: -2px;
+    bottom: -4px;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: 2px solid;
+    border-color: $theme-color-white;
+    margin: 0;
+    background-color: $theme-color-green;
+    border-radius: 50%;
+  }
+}
+
+.friends-list__item:hover,.friends-list__item:active,.friends-list__item:visited{
+  @if $useDarkTheme == true {
+    background-color: lighten($nav-background-color-dark, 20%);
+    color: darken($font-color-light, 10%);
+  }
+
+  @else {
+    background-color: darken($nav-background-color-light, 20%);
+    color: opacify($font-color, 1);
+  }
+}
+
+.friends-list__item__thumbnail {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.friends-button {
+  position: fixed;
+  z-index: 6;
+  right: 1.5em;
+  bottom: 1em;
+
+  @include breakpoint() {
+    display: none;
+  }  
+}
+
+.friends-button__link {
+  display: flex;
+  width: 3.5em;
+  height: 3.5em;
+  background-color: $theme-color-secondary;
+  border-radius: 50%;
+  color: $theme-color-white;
+
+  img {
+    width: 25px;
+    margin: auto;
+  }
+}
+
+.friends__item--selected {
+  background-color: $theme-color-secondary-light;
+  background-color: "#cccccc";
+  pointer-events: none;
+}
+
+.friends-list--empty {
+  display: block;
+  padding: 1em;
+  font-weight: 500;
+
+  @include breakpoint{
+    color: $theme-color-primary;
+    text-align: center;
+  }
+}
+
+.friends-list--dot{
+  display: flex;
+  margin: 0 0 0 2em;
+}

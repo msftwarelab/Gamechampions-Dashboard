@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+      "target": "es6",
+      "allowSyntheticDefaultImports": true,
+      "module" : "commonjs",
+      "baseUrl": "./",
+      "jsx": "react",
+      "checkJs": true,
+      "resolveJsonModule": true,
+      "paths": {
+        "~components/*": ["src/js/components/*"],
+        "~containers/*": ["src/js/containers/*"],
+        "~models/*": ["src/js/models/*"],
+        "~service/*": ["service/*"],
+        "~hocs*": ["src/js/hocs/index"],
+        "~hooks*": ["src/js/hooks/index"],
+        "~routes*": ["src/js/routes/index"],
+        "~theme*": ["src/js/theme/index"],
+        "~config*": ["configuration/index"],
+        "~util*": ["src/js/util/*"]
+      }
+    },
+    "exclude": ["node_modules", "build", "coverage", "dist", "lib"]
+}

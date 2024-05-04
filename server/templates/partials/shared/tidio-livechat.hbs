@@ -1,0 +1,25 @@
+<script src="//code.tidio.co/242mnqsarodyobo0h4xk2slamesacan7.js" async></script>
+<script>
+    (function() {
+        function onTidioChatApiReady() {
+            window.tidioChatApi.hide();
+            window.tidioChatApi.on("close", function() {
+                window.tidioChatApi.hide();
+            });
+        }
+
+        if (window.tidioChatApi) {
+            window.tidioChatApi.on("ready", onTidioChatApiReady);
+        } else {
+            document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+        }
+
+        liveChatButton = document.querySelector(".tidio-livechat-button");
+        if (liveChatButton) {
+            liveChatButton.addEventListener("click", function() {
+                window.tidioChatApi.show();
+                window.tidioChatApi.open();
+            });
+        }
+    })();
+</script>

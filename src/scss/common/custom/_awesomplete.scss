@@ -1,0 +1,49 @@
+.form .form-field.autocomplete .awesomplete {
+  width: 100%;
+
+  ~ label {
+    transform: translate3d(-0.1em, -0.75em, 0) scale(0.750);
+  }
+
+  > input:focus {
+    border: 1px solid $theme-color-primary-light;
+  }
+
+  > ul {
+    border: 0;
+    margin: 0;
+    background-color: $theme-color-white;
+    border-radius: $border-radius;
+    font-size: .875em;
+
+    &::before {
+      display: none;
+    }
+
+    > li {
+      padding: .5714em;
+
+      &:hover {
+        background-color: darken($theme-color-white, 10%);
+
+        mark {
+          background-color: transparent;
+        }
+      }
+
+      &[aria-selected='true'] {
+        background-color: darken($theme-color-white, 10%);
+        color: $font-color;
+
+        mark {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  mark {
+    background-color: transparent;
+    font-weight: bold;
+  }
+}

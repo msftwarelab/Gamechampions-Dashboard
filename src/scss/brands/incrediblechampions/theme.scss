@@ -1,0 +1,76 @@
+@import '~susy/sass/susy';
+
+$base-font-family: unquote('sans-serif');
+$background-color: #f6f6f6;
+$font-family: 'Rubik', sans-serif;
+$alternate-font-family: 'Rubik', sans-serif;
+$theme-color-primary: #0d2440;
+$theme-color-primary-dark: darken($theme-color-primary, 10%);
+$theme-color-primary-light: lighten($theme-color-primary, 10%);
+$theme-color-secondary: #50b05c;
+$theme-color-secondary-dark: darken($theme-color-secondary, 10%);
+$theme-color-secondary-light: lighten($theme-color-secondary, 10%);
+$theme-color-tertiary: #27778a;
+$theme-color-tertiary-dark: darken($theme-color-tertiary, 10%);
+$theme-color-tertiary-light: lighten($theme-color-tertiary, 10%);
+$theme-color-white: #fff;
+$theme-color-black: #000;
+$theme-color-green: #72f58b;
+$theme-color-indianRed: #ec3a55;
+$error-background-color: #ffdbd9;
+$error-color: #f44336;
+$offline-background-color: #333;
+$darken-color-dark: rgba(0, 0, 0, 0.54);
+$darken-color: rgba(0, 0, 0, 0.33);
+$darken-color-light: rgba(0, 0, 0, 0.1);
+$lighten-color: rgba(255, 255, 255, 0.66);
+$lighten-color-light: rgba(255, 255, 255, 0.33);
+$input-disabled-background-color: #eee;
+$disabled-background-color: #9a9a9a;
+$disabled-color: #ccc;
+$line-height: 1.5em;
+$x-large: 24px;
+$large: 20px;
+$font-size-normal: 16px;
+$small: 14px;
+$x-small: 12px;
+$font-color: rgba(0, 0, 0, 0.7);
+$font-color-light: #fff;
+$label-color: #a9a9a9;
+$font-weight-normal: 500;
+$semi-bold: 600;
+$bold: 700;
+$max-width: 78em;
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$box-shadow-elevated: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+$box-shadow-dialog: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+$box-shadow-bottom: 0 2px 5px rgba(0, 0, 0, 0.26);
+$box-shadow-top: 0 -2px 5px rgba(0, 0, 0, 0.26);
+$box-shadow-frame: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);
+$border-radius: 3px;
+$input-border-radius: 14px;
+$border-darken: 1px solid rgba(0, 0, 0, 0.33);
+$border-lighten: 1px solid rgba(0, 0, 0, 0.05);
+$overlay-blue-background-color: #00143cad;
+$overlay-background-color: rgba(255, 255, 255, 0.7);
+$useDarkTheme: false;
+
+@mixin breakpoint($point: desktop) {
+  @if $point == desktop-xxl {
+    @media only screen and (min-width: 90em) {
+      @content;
+    }
+  }
+
+  @else if $point == desktop-l {
+    @media only screen and (min-width: 78em) {
+      @content;
+    }
+  }
+
+  @else {
+    @media only screen and (min-width: 48em) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.form-field--time {
+  margin-top: 2em;
+  
+  input[type="text"] {
+    position: relative;
+    padding: 0.6785em;
+    -webkit-appearance: textfield;
+    background-color: $theme-color-white;
+    outline: none;
+    text-align: right;
+
+    &:focus {
+      border-color: $theme-color-primary;
+
+      ~ label {
+        color: $theme-color-primary;
+      }
+    }
+
+    &[readonly],
+    &[disabled] {
+      border-bottom-color: $input-disabled-background-color;
+      background-color: transparent;
+
+      &::before {
+        color: $disabled-color;
+      }
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0.75em;
+    left: 0.5em;
+    color: $label-color;
+    font-weight: 400;
+    pointer-events: none;
+    transform-origin: top left;
+    transition: transform 0.2s ease;
+  }
+}

@@ -1,0 +1,125 @@
+.notification-dots {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: right;
+
+  @include breakpoint {
+    display: none;
+  }
+}
+
+.notification-dots__uninitialized {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: $error-color;
+  border-radius: 50%;
+
+  @include breakpoint {
+    top: 0;
+    right: 0.66em;
+  }
+}
+
+.notification-dots__wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.notification-dots__icon-wrapper {
+  margin-right: 0.5em
+}
+
+.notification-dots__popup {
+  position: relative;
+}
+
+.notification-dots__popup---uninitialized {
+  position: absolute;
+  top: 0;
+  right: 0.5em;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: $error-color;
+  border-radius: 50%;
+}
+
+.notification-dots__icons {
+  display: none;
+
+  @include breakpoint {
+    display: inline;
+  }
+}
+
+
+.notification-dots__anchor {
+  @include breakpoint {
+    display: none;
+  }
+}
+
+.notification-dots__list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.notification-dots__link-item {
+  display: block;
+  padding: 0.5em 1.5em;
+  margin-top: 0;
+  color: $theme-color-black;
+  text-decoration: none;
+
+  &:active {
+    background-color: $disabled-color;
+  }
+
+  &:visited {
+    color: $theme-color-black;
+  }
+}
+
+.notification-dots__dots-icon {
+  position: absolute;
+  right: 0.5em;
+  margin: auto;
+  cursor: pointer;
+
+  &:active {
+    background-color: $disabled-color;
+    border-radius: 50%;
+  }
+}
+
+.notifications-icons__mobile-window__close {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.notification-dots__content {
+  position: fixed;
+  z-index: 9;
+  right: 2em;
+  display: none;
+  margin-right: 1em;
+  background-color: $theme-color-white;
+  border-radius: 5px;
+  box-shadow: $box-shadow-frame;
+  text-align: left;
+  transition: max-height 0.2s ease-out;
+
+  &.open {
+    display: block;
+  }
+}
+
+.popup-link-touch {
+  background-color: $disabled-background-color;
+}

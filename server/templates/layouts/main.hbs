@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html {{{ htmlAttributes }}}>
+
+<head>
+    {{{ head }}}
+    <style type="text/css">{{{data.inlineStyles}}}</style>
+    {{{ styles }}}
+    {{> shared/google-tag-manager }}
+</head>
+
+    <body {{{ bodyAttributes }}}>
+        {{> shared/google-tag-manager-noscript }}
+        {{{body}}}
+
+        {{> shared/async-css }}
+
+
+        {{#each data.vendorScripts}}
+            <script src="{{this}}"></script>
+        {{~/each}}
+        {{#each data.remoteScripts}}
+            <script src="{{this}}" async></script>
+        {{~/each}}
+
+        {{> shared/one-signal }}
+        {{> shared/tidio-livechat }}
+    </body>
+</html>

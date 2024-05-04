@@ -1,0 +1,91 @@
+.advanced-search__form {
+  position: fixed;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 48em;
+  height: 100%;
+  padding: 1em;
+  backface-visibility: hidden;
+  background-color: $theme-color-white;
+  box-shadow: $box-shadow-dialog;
+  opacity: 1;
+  overflow-y: auto;
+  transform: translate3d(-50%, -50%, 0);
+  transition: opacity 0.2s ease-in-out;
+
+  @include breakpoint {
+    position: absolute;
+    top: unset;
+    right: 10%;
+    left: 10%;
+    width: unset;
+    max-width: unset;
+    height: unset;
+    padding: 0.5em;
+    margin: 1em;
+    overflow-y: unset;
+    transform: unset;
+  }
+}
+
+.advanced-search__form__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3.5em;
+  height: 3.5em;
+
+  @include breakpoint {
+    display: none;
+  }
+}
+
+.advanced-search__form__section {
+  margin-top: 2em;
+
+  @include breakpoint {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+
+    .form-field {
+      @include span(1 of 2 1/24);
+      &:nth-child(2n) {
+        @include last;
+      }
+
+      @include breakpoint(desktop-xxl) {
+        @include span(1 of 3 1/24);
+        &:nth-child(2n) {
+          @include span(1 of 3 1/24);
+        }
+        &:nth-child(3n) {
+          @include last;
+        }
+      }
+
+      .form-field__input-container {
+        .form-field__input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.form__buttons__button--reset-search {
+  background-color: transparent;
+  box-shadow: none;
+  color: $font-color;
+
+  &:visited {
+    color: $font-color;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: lighten($font-color, 10%);
+  }
+}

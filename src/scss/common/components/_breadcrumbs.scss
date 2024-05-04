@@ -1,0 +1,67 @@
+.breadcrumbs {
+  font-size: 0.8em;
+  line-height: 1.25em;
+  text-transform: uppercase;
+}
+
+.card--breadcrumbs {
+  display: none;
+  background-color: $theme-color-primary;
+  color: $font-color-light; 
+
+  @include breakpoint {
+    display: block;
+  }
+
+  @if $useDarkTheme == true {
+    background-color: $theme-color-white;
+    color: $font-color; 
+  }
+}
+
+.breadcrumbs__links {
+  padding: 0;
+  margin: 0;
+  font-size: 0.85em;
+  font-weight: 400;
+  list-style: none;
+  text-align: left;
+}
+
+.breadcrumbs__links__link {
+  display: inline-block;
+  margin-right: 0.33em;
+  line-height: 1;
+  vertical-align: middle;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    color: $theme-color-secondary-light;
+    text-decoration: none;
+
+    &:visited {
+      color: $theme-color-secondary-light;
+    }
+
+    &:hover,
+    &:active {
+      color: lighten($theme-color-secondary-light, 10%);
+    }
+
+    @if $useDarkTheme == true {
+      color: $theme-color-primary;
+
+      &:visited {
+        color: $theme-color-primary;
+      }
+
+      &:hover,
+      &:active {
+        color: lighten($theme-color-primary-light, 10%);
+      }
+    }   
+  }
+}

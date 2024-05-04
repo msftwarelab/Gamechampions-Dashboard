@@ -1,0 +1,27 @@
+.error-page {
+  position: relative;
+  height: 100vh;
+  padding: 1em;
+  margin: 0 auto;
+  background-color: $theme-color-white;
+  box-shadow: $box-shadow;  
+}
+
+.error-page__content {
+  padding: 3em;
+  text-align: left; 
+}
+
+.error-page__logo {
+  text-align: center;
+}
+
+.error-page__img {
+  max-width: 100%;
+  height: auto;  
+
+  @include breakpoint {
+    max-width: 30%;  
+  } 
+}
+

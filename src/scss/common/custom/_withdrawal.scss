@@ -1,0 +1,68 @@
+.form{
+
+  .form-field--amount{
+    margin : 2% auto;  
+    
+    @include breakpoint {
+      @include span(1 of 1 last);
+    }
+    .form-field__input-container--amount{
+      &::before {
+        position: absolute;
+        bottom: 13px;
+        left: 0.5em;
+        content: "$";
+      }
+      .form-field__input--amount {
+        padding-left: 20px;
+      }
+  
+      .form-field__label--amount{
+        top: 24px;
+        left: 20px !important;
+        @include breakpoint{
+          left: 8px !important;
+        } 
+      } 
+      .form-field__input:focus ~ .form-field__label{
+        transform: translate3d(-0.6em, -1em, 0) scale(0.75);
+      }
+      .form-field__input--has-value ~ .form-field__label{
+        transform: translate3d(-0.6em, -1em, 0) scale(0.75);
+      }
+    }
+  }
+
+  .form-field--energy_Amount{
+    margin : 2% auto;  
+    
+    @include breakpoint {
+      @include span(1 of 1 last);
+    }
+    .form-field__input-container--amount{
+      &::before {
+        position: absolute;
+        bottom: 13px;
+        left: 0.5em;
+      }
+      .form-field__input--amount {
+        padding-left: 20px;
+      }
+  
+      .form-field__label--amount{
+        top: 24px;
+        left: 20px !important;
+        @include breakpoint{
+          left: 8px !important;
+        } 
+      } 
+      .form-field__input:focus ~ .form-field__label{
+        transform: translate3d(-0.6em, -1em, 0) scale(0.75);
+      }
+      .form-field__input--has-value ~ .form-field__label{
+        transform: translate3d(-0.6em, -1em, 0) scale(0.75);
+      }
+    }
+  }
+}
+  

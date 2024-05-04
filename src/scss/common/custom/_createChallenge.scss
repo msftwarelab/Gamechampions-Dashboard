@@ -1,0 +1,43 @@
+.create-challenge-form{
+
+  .form-field--bet-amount-hide{
+    display: none;
+  }
+  .form-field--bet-amount{
+
+    .form-field__input-container--bet-amount{
+      &::before {
+        position: absolute;
+        bottom: 14px;
+        left: 0.5em;
+        content: "$";
+      }
+      .form-field__input--bet-amount {
+        padding-left: 20px;
+      }
+
+      .form-field__label--bet-amount{
+        top: 24px;
+        left: 20px !important;
+        @include breakpoint{
+          left: 8px !important;
+        } 
+      } 
+      .form-field__input:focus ~ .form-field__label{
+        transform: translate3d(-0.6em, -1em, 0) scale(0.75);
+      }
+      .form-field__input--has-value ~ .form-field__label{
+        transform: translate3d(-0.6em, -1em, 0) scale(0.75);
+      }
+    }
+  }
+}
+.button.send--challenge {
+  flex: 1;
+  font-weight: 700;
+  font-style: italic;
+  
+  @include breakpoint{
+    flex: 0;
+  } 
+}

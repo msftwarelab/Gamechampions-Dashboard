@@ -1,0 +1,266 @@
+.form {
+  @include container;
+}
+
+.form-field {
+  position: relative;
+  padding: 0.5em 0;
+
+  textarea.form-field__input {
+    display: block;
+    resize: none;
+  }
+
+  select.form-field__input {
+    height: 3em;
+    -webkit-appearance: none;
+  }
+
+  @include breakpoint {
+    @include span(1 of 2 0);
+
+    padding: 0.5em;
+  }
+}
+
+.form-field--single {
+  @include breakpoint {
+    @include span(1 of 1 last);
+  }
+}
+.form__section{
+  .form-field--double{
+    width: 50%;
+    float: left;
+    &:nth-child(2n+1){
+      padding-right: .5em;
+    }
+    &:nth-child(2n){
+      padding-left: .5em;
+    }
+    
+    @include breakpoint {
+      padding: 0.5em;
+    }
+  }
+
+  .form-field--triple{
+    width: 50%;
+    padding: 2%;
+    float: left;
+
+    &:nth-child(3n){
+      width: 100%;
+    }
+    
+    @include breakpoint {
+      width: 30%;
+      padding: 0.5em;
+
+      &:nth-child(3n){
+        width: 30%;
+      }
+    }
+  }
+
+}
+
+.form__section--reason-field__input {
+  .form-field {
+    width: 100% !important;
+    .form-field--material select.form-field__input {
+      height: 2.85em !important;
+    }
+    .form-field__input-container {
+      div {
+        display: none;
+      }
+      .form-field__input {
+        height: 2.85em !important;
+      }
+    }
+  }
+}
+
+.form-field__input {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid $darken-color;
+  border-radius: $input-border-radius;
+  font-weight: 400;
+
+  &[disabled],
+  &[readonly] {
+    background-color: $input-disabled-background-color;
+    color: $disabled-color;
+  }
+}
+
+.form-field__input--left {
+  text-align: left;
+}
+
+.form-field__input--center {
+  text-align: center;
+}
+
+.form-field__input--right {
+  text-align: right;
+}
+
+.form-field__label {
+  display: block;
+  margin: 0.5em;
+  font-weight: bold;
+}
+
+.form__buttons {
+  padding: 0.5em 0;
+  text-align: center;
+  i{
+    color: $theme-color-white;
+  }
+
+  @include breakpoint {
+    padding: 0.5em;
+    text-align: left;
+  }
+}
+
+.form__buttons--right {
+  @include breakpoint {
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+  }
+}
+
+.form__buttons--order {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include breakpoint {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.form__buttons__button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center  ;
+  padding-right: 25%;
+  padding-left: 25%;
+  margin: 1em 0;
+
+  @include breakpoint {
+    padding: 1.33em 1.66em;
+    margin-right: 1em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  
+  .button--label{
+    margin: auto;
+  }
+
+  &.form__buttons__button--withdrawal {
+    background-color: $theme-color-secondary !important;
+
+    &:hover {
+      background-color: #01C12C;
+    }
+  }
+}
+
+
+
+.form__buttons__button--cancel {
+  background-color: transparent;
+  box-shadow: none;
+  color: $theme-color-secondary;
+  outline: none;
+  
+  &:visited {
+    color: $theme-color-secondary;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: lighten($theme-color-secondary, 10%);
+  }
+
+  &.button--cancel-withdrawal {
+    color: $theme-color-secondary;
+
+    &:hover {
+      background-color: transparent;
+      color: lighten($theme-color-secondary, 10%);
+    }  
+  }
+}
+
+.grid-display {
+  display: grid;
+}
+
+.form__buttons__button--unverify {
+  background-color: red;
+
+  &:hover {
+    background-color: #ff3f3f;
+  }
+}
+
+.form__thumbnail-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form__thumbnail {
+  position: relative;
+  overflow: hidden;
+  width: 8em;
+  height: 8em;
+  margin: auto;
+  background-color: $darken-color-light;
+  border-radius: 50%;
+  box-shadow: $box-shadow-elevated;
+}
+
+.form__thumbnail__image {
+  border-radius: 50%;
+}
+
+.form__thumbnail--icon {
+  width: 4em;
+  height: 4em;
+}
+
+.form__error__message {
+  padding-left: 0.625em;
+  color: $error-color;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.no-js {
+  .form-field__input {
+    ~ .form-field__label {
+      color: $label-color;
+      transform: translate3d(-0.5em, -2em, 0) scale(0.875);
+    }
+  }
+}
+
+.form-field__description {
+  @include span(1 of 1 last);
+
+  padding-left: 0.5em;
+  font-size: 0.875em;
+  font-style: italic;
+}

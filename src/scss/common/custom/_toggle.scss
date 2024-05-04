@@ -1,0 +1,46 @@
+.form-field-toggle {
+  @include container;
+}
+
+.form-field-toggle__holder {
+  position: relative;
+}
+
+.form-field-toggle__checkbox {
+  @include span(1 of 5);
+
+  padding-top: 0.4em;
+}
+
+.form-field-toggle__label {
+  @include span(1 of 5);
+
+  color: $label-color;
+  font-weight: 400;
+}
+
+.form-field-toggle__label--desktop-only {
+  display: none;
+
+  @include breakpoint {
+    display: inline;
+  }
+}
+
+.form-field-toggle__label__abbreviation::before {
+  content:attr(title);
+
+  @include breakpoint {
+    display: none;
+  }
+}
+
+.form-field-toggle__title {
+  display: none;
+
+  @include breakpoint {
+    @include span(1 of 5 last);
+    
+    display: block;
+  }
+}

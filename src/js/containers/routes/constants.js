@@ -1,0 +1,4 @@
+export const REDUCER_NAME = "routes";
+export const SET_ROUTES = `${REDUCER_NAME}/SET_ROUTES`;
+export const SET_GO_MAPS = `${REDUCER_NAME}/SET_GO_MAPS`;
+export const SET_PREVIOUS_LOCATION = `${REDUCER_NAME}/SET_PREVIOUS_LOCATION`;

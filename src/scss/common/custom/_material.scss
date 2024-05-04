@@ -1,0 +1,90 @@
+$material-input-font-color: rgba(0, 0, 0, 1);
+
+.form-field--material {
+  margin-top: 0;
+
+  .form-field__input {
+    max-width: none;
+    padding-top: 1.5em;
+    border: 1px solid $label-color;
+    border-radius: $input-border-radius;
+    color: $material-input-font-color;
+
+    &:focus ~ label {
+      color: $label-color;
+    }
+
+    &:focus {
+      border: 1px solid $theme-color-primary;
+    }
+  }
+
+  .form-field__input-container {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-bottom: 3px solid $label-color;
+      border-radius: $input-border-radius;
+      content: "";
+      pointer-events: none;
+      transform: scaleX(0);
+      transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    }
+  }
+
+  .form-field__label {
+    position: absolute;
+    top: 1.15em;
+    left: 0.5em;
+    font-size: initial;
+
+    @include breakpoint {
+      left: 0;
+    }
+  }
+
+  .form-field__input[readonly],
+  .form-field__input:focus,
+  .form-field__input--has-value {
+    ~ .form-field__label {
+      transform: translate3d(-0.1em, -0.75em, 0) scale(0.750);
+    }
+  }
+  
+  .form-field__input:focus {
+    ~ .form-field__label {
+      color: $theme-color-primary;
+    }
+  }
+
+  select.form-field__input {
+    height: 3.85em;
+    padding: 0.75em 0.5em;
+    background-color: $theme-color-white;
+  }
+
+  select.form-field__input.form-field__input__dropdown__datepicker {
+    padding-top: 1.5em;
+  }
+
+  .form-field__label--always-open {
+    transform: translate3d(-0.1em, -0.75em, 0) scale(0.750);
+  }
+}
+
+.form-field--material.form-field--invalid {
+  .form-field__label {
+    color: $label-color;
+  }
+
+  .form-field__input-container {
+    &::after {
+      border-bottom-color: $error-color;
+      transform: scaleX(1);
+    }
+  }
+}

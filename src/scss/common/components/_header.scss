@@ -1,0 +1,85 @@
+.header {
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+  backface-visibility: hidden;
+  background-color: $theme-color-primary;
+  box-shadow: $box-shadow-bottom;
+  color: $font-color-light;
+  transform: translateZ(0);
+}
+.header__icons{
+  width: 33.33%;
+  flex: auto;
+  align-items: center;  
+  gap: .5em;
+  place-content: flex-end;
+}
+.header__title {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  
+  @include breakpoint {
+    width: 33.3%;
+  }
+}
+
+.header__title__hamburger {
+  display: inline-block;
+  overflow: hidden;
+  width: 24px;
+  height: 3.5em;
+  border: 0;
+  background: url('/img/icons/ic_menu_white_24px.svg') center center no-repeat;
+  background-size: 2.5rem;
+  cursor: pointer;
+  outline: 0;
+
+  @include breakpoint {
+    display: none;
+  }
+}
+
+.header__title__label {
+  display: none;
+
+  @include breakpoint {
+    display: block;
+  }
+}
+
+.header__logo {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+
+  @include breakpoint {
+    display: none;
+    width: 33.3%;
+  }
+}
+
+.header__logo--desktop {
+  display: none;
+
+  @include breakpoint {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.header__logo__img {
+  display: block;
+  width: auto;
+  height: 2.6em;
+}
+
+.header__profile__img {
+  display: block;
+  height: 2.5em;
+  border-radius: 50%;
+}

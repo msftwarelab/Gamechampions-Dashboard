@@ -1,0 +1,149 @@
+.wallet-card {
+  .card__title {
+    font-size: 1.5em;
+
+    @include breakpoint {
+      margin-left: 1em;    
+    }
+  }
+}
+
+.choose-amount {
+  .radio-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    @include breakpoint {
+      padding: 1em 0;
+    }
+  }
+
+  h2 {
+    margin: 0.25rem;
+  }
+
+  .form__buttons__button--amount-select__form {
+    margin: 0;
+    background-color: $theme-color-secondary;
+
+    &:hover {
+      background-color: lighten($theme-color-secondary, 10%);
+    }
+
+    @include breakpoint {
+      margin: 1em 0;
+    }
+  }
+  .button--cancel-amount-select__form {
+    color: $theme-color-secondary;
+
+    &:hover {
+      color: lighten($theme-color-secondary, 10%);
+    }
+  }
+  .form__error__message {
+    margin: 0 1.875rem;
+  }
+
+  .radio-group__item {
+    display: flex;
+    width: 50%;
+    min-height: 85px;
+    justify-content: center;
+    padding: 0.5em 0.5em 0;
+    text-align: center;
+
+    @include breakpoint {
+      width: 16%;
+      min-height: unset;
+      padding: 0 0.5em 0;
+    }
+    .form-field__checkbox__label{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+
+  .form-field__checkbox__input {
+    display: none;
+
+    &:checked + .form-field__checkbox__label {
+      border-color: $theme-color-secondary;
+      background-color:  $theme-color-secondary;
+      color: $theme-color-white;
+    }
+  }
+  .form-field__checkbox__label {
+    display: inline-block;
+    width: 100%;
+    border: solid 3px $theme-color-primary;
+    font-size: $large;
+    font-weight: $bold;
+  }
+
+  .form-field__input-container {
+    &::before {
+      position: absolute;
+      bottom: 0.7em;
+      left: 0.5em;
+      content: "€";
+    }
+  }
+
+  .form-field__input {
+    padding: 0.85em 0.5em 0.65em 1.25em;
+  }  
+
+  .form-field.promo-code {
+    padding: 0.5rem 0;
+  }
+
+  .form__buttons--amount-select__form {
+    padding-bottom: 0;
+  }
+
+  .form__buttons__button {
+    margin-bottom: 0.5em;
+  }
+  .form-field--amount{
+    display: flex;
+    width: 100%;
+    flex-flow: row-reverse;
+    margin: 0;
+    
+    @include breakpoint {
+      width: 15%;
+    }
+  }
+  .form-field__input--amount{
+    max-width: 5em;
+  }
+  .form-field--choose-amount{
+    width: 100%;
+    padding: 0;
+    float: inherit;
+  }
+}
+
+.modal--wallet {
+  @include breakpoint {
+    width: 32em;
+  }
+
+  .wallet {
+    .card__title {
+      display: flex;
+    }
+  }
+}
+.card--submit-button{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  float: right;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  gap: 0.5em;
+
+}

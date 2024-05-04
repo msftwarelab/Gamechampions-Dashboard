@@ -1,0 +1,23 @@
+node_modules/
+dist/
+css/
+*.log
+.sass-cache/
+src/script.js
+src/script.js.map
+/app.js
+/app.js.map
+sw.js
+stats.json
+.idea/
+server-dist/
+/session/
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+server-key.pem
+server.crt
+server.csr
+server.pem
+webpack-origin.config.js
